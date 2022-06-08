@@ -38,16 +38,16 @@
             android:textSize="22sp" />
 
         <EditText
-            android:id="@+id/inputLoginPassword"
+            android:id="@+id/inputRegisterFirstName"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:ems="10"
             android:fontFamily="monospace"
-            android:hint="Enter last name..."
+            android:hint="Enter first name..."
             android:inputType="textPersonName"
             android:textColor="#FFFFFF"
             android:textColorHighlight="#3F51B5"
-            android:textColorHint="#FFFFFF"
+            android:textColorHint="#BFB8B8"
             android:textColorLink="#3F51B5"
             android:textSize="22sp" />
 
@@ -71,7 +71,7 @@
             android:inputType="textPersonName"
             android:textColor="#FFFFFF"
             android:textColorHighlight="#3F51B5"
-            android:textColorHint="#FFFFFF"
+            android:textColorHint="#BFB8B8"
             android:textColorLink="#3F51B5"
             android:textSize="22sp" />
 
@@ -95,7 +95,7 @@
             android:inputType="textEmailAddress"
             android:textColor="#FFFFFF"
             android:textColorHighlight="#3F51B5"
-            android:textColorHint="#FFFFFF"
+            android:textColorHint="#BFB8B8"
             android:textColorLink="#3F51B5"
             android:textSize="22sp" />
 
@@ -119,7 +119,7 @@
             android:inputType="textPassword"
             android:textColor="#FFFFFF"
             android:textColorHighlight="#3F51B5"
-            android:textColorHint="#FFFFFF"
+            android:textColorHint="#BFB8B8"
             android:textColorLink="#3F51B5"
             android:textSize="22sp" />
 

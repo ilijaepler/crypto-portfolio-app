@@ -11,7 +11,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:padding="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/labelLoginTitle"
@@ -60,7 +64,7 @@
             android:shadowColor="#FFFFFF"
             android:textColor="#FFFFFF"
             android:textColorHighlight="#9C27B0"
-            android:textColorHint="#FFFFFF"
+            android:textColorHint="#BFB8B8"
             android:textColorLink="#9C27B0"
             android:textSize="22sp" />
 
@@ -77,16 +81,13 @@
         <EditText
             android:id="@+id/inputLoginPassword"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:ems="10"
             android:fontFamily="monospace"
             android:hint="Enter password..."
             android:inputType="textPassword"
-            android:shadowColor="#FFFFFF"
             android:textColor="#FFFFFF"
-            android:textColorHighlight="#3F51B5"
-            android:textColorHint="#FFFFFF"
-            android:textColorLink="#3F51B5"
+            android:textColorHint="#BFB8B8"
             android:textSize="22sp" />
 
         <Button
