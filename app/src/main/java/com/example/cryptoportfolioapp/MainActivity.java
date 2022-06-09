@@ -6,6 +6,7 @@ import androidx.core.app.ActivityOptionsCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Message;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -21,6 +22,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import org.json.JSONArray;
+
+import java.util.LinkedList;
 import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
@@ -87,6 +91,37 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {}
+        });
+
+        initCryptoPairs();
+    }
+
+    private void initCryptoPairs() {
+        API.getJSON("https://api.binance.com/api/v3/ticker/price", new ReadDataHandler(){
+
+            @Override
+            public void handleMessage(@NonNull Message msg) {
+                String response = getJson();
+
+                try{
+                    JSONArray array = new JSONArray(response);
+                    LinkedList<CryptoPairModel> cryptoPairs = CryptoPairModel.parseJSONArray(array);
+
+                    TextView labelSymbol = findViewById(R.id.labelSymbol);
+                    labelSymbol.setText("");
+
+                    TextView labelValue = findViewById(R.id.labelValue);
+                    labelValue.setText("");
+
+                    for(CryptoPairModel cp : cryptoPairs){
+                        labelSymbol.setText(cp.getSymbol());
+                        labelValue.setText(cp.getPrice());
+                    }
+
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
         });
     }
 
