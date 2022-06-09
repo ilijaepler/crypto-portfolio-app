@@ -2,13 +2,17 @@ package com.example.cryptoportfolioapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityOptionsCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -40,13 +44,29 @@ public class MainActivity extends AppCompatActivity {
 
         TextView labelMainTitle = findViewById(R.id.labelMainTitle);
 
-        TextView labelMainLogout = findViewById(R.id.labelMainLogout);
-
-        // Logging out the user
-        labelMainLogout.setOnClickListener(new View.OnClickListener() {
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationViewMain);
+        bottomNavigationView.setSelectedItemId(R.id.menuItemPrices);
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
-            public void onClick(View view) {
-                logoutUser();
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch(item.getItemId()){
+                    case R.id.menuItemPortfolio:
+                        Intent intent = new Intent(MainActivity.this, PortfolioActivity.class);
+                        Bundle bundle = ActivityOptionsCompat.makeCustomAnimation(MainActivity.this,
+                                android.R.anim.fade_in, android.R.anim.fade_out).toBundle();
+                        startActivity(intent, bundle);
+                        finish();
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.menuItemPrices:
+                        return true;
+                    case R.id.menuItemLogout:
+                        // Logout user
+                        logoutUser();
+                        return true;
+                }
+
+                return false;
             }
         });
 
@@ -74,7 +94,9 @@ public class MainActivity extends AppCompatActivity {
     private void logoutUser(){
         FirebaseAuth.getInstance().signOut();
         Intent intent = new Intent(this, LoginActivity.class);
-        startActivity(intent);
+        Bundle bundle = ActivityOptionsCompat.makeCustomAnimation(MainActivity.this,
+                android.R.anim.fade_in, android.R.anim.fade_out).toBundle();
+        startActivity(intent, bundle);
         finish();
     }
 }

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menuItemPrices"
+        android:icon="@drawable/ic_prices_foreground"
+        android:title="Prices" />
+    <item
+        android:id="@+id/menuItemPortfolio"
+        android:icon="@drawable/ic_portfolio_foreground"
+        android:title="Portfolio" />
+    <item
+        android:id="@+id/menuItemLogout"
+        android:icon="@drawable/ic_logout_foreground"
+        android:title="Logout" />
+</menu>
