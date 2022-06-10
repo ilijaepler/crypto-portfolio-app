@@ -2,14 +2,17 @@ package com.example.cryptoportfolioapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.ActivityOptionsCompat;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Message;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -97,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initCryptoPairs() {
+        // Read data from Binance API
         API.getJSON("https://api.binance.com/api/v3/ticker/price", new ReadDataHandler(){
 
             @Override
@@ -106,16 +110,27 @@ public class MainActivity extends AppCompatActivity {
                 try{
                     JSONArray array = new JSONArray(response);
                     LinkedList<CryptoPairModel> cryptoPairs = CryptoPairModel.parseJSONArray(array);
+                    LinearLayout mainScrollView = findViewById(R.id.mainScrollView);
+                    LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-                    TextView labelSymbol = findViewById(R.id.labelSymbol);
-                    labelSymbol.setText("");
-
-                    TextView labelValue = findViewById(R.id.labelValue);
-                    labelValue.setText("");
+                    String[] symbols = {"BTCUSDT", "ETHUSDT", "ADAUSDT",
+                                        "XRPUSDT", "SOLUSDT", "DOTUSDT",
+                                        "AVAXUSDT", "MATICUSDT", "LINKUSDT"};
 
                     for(CryptoPairModel cp : cryptoPairs){
-                        labelSymbol.setText(cp.getSymbol());
-                        labelValue.setText(cp.getPrice());
+                        ConstraintLayout item = (ConstraintLayout) inflater.inflate(R.layout.crypto_pair_view, null);
+
+                        for(int i = 0; i < symbols.length; i++){
+                            if(symbols[i].equals(cp.getSymbol())){
+                                TextView labelName = item.findViewById(R.id.labelViewSymbol);
+                                labelName.setText(cp.getSymbol());
+
+                                TextView labelValue = item.findViewById(R.id.labelViewPrice);
+                                labelValue.setText("$" + cp.getPrice());
+
+                                mainScrollView.addView(item);
+                            }
+                        }
                     }
 
                 }catch (Exception e){
