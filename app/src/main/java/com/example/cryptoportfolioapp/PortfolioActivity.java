@@ -2,16 +2,25 @@ package com.example.cryptoportfolioapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.ActivityOptionsCompat;
 
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import org.eazegraph.lib.charts.PieChart;
+import org.eazegraph.lib.models.PieModel;
 
 import java.util.Objects;
 
@@ -52,7 +61,57 @@ public class PortfolioActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+        // testing scrollViewPortfolio
+        /*String[] sym = {"1", "2", "3", "4", "5", "6"};
+
+
+        LinearLayout scrollViewPortfolio = findViewById(R.id.scrollViewPortfolio);
+        LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+        ConstraintLayout item = (ConstraintLayout) inflater.inflate(R.layout.crypto_percentage_view, null);
+
+        for(int i = 0; i < sym.length; i++){
+            TextView labelPercentageViewSymbol = item.findViewById(R.id.labelPercentageViewSymbol);
+            labelPercentageViewSymbol.setText(sym[i]);
+
+            TextView labelPercentageViewPercentage = item.findViewById(R.id.labelPercentageViewPercentage);
+            labelPercentageViewPercentage.setText(sym[i]);
+            scrollViewPortfolio.addView(item);
+        }*/
+
+        setPieChartData();
     }
+
+    private void setPieChartData() {
+        PieChart pieChart;
+
+        pieChart = findViewById(R.id.piechart);
+
+        pieChart.addPieSlice(
+                new PieModel(
+                        "R",
+                        10,
+                        Color.parseColor("#FF3700B3")));
+        pieChart.addPieSlice(
+                new PieModel(
+                        "Python",
+                        0,
+                        Color.parseColor("#66BB6A")));
+        pieChart.addPieSlice(
+                new PieModel(
+                        "C++",
+                        0,
+                        Color.parseColor("#EF5350")));
+        pieChart.addPieSlice(
+                new PieModel(
+                        "Java",
+                        0,
+                        Color.parseColor("#29B6F6")));
+
+        pieChart.startAnimation();
+    }
+
 
     // Logging out the user
     private void logoutUser(){
