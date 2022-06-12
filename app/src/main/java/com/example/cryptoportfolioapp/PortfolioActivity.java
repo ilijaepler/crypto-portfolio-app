@@ -7,6 +7,7 @@ import androidx.core.app.ActivityOptionsCompat;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -25,6 +26,8 @@ import org.eazegraph.lib.models.PieModel;
 import java.util.Objects;
 
 public class PortfolioActivity extends AppCompatActivity {
+
+    private final static String SHARED_PREFERENCES_PREFIX = "CryptoPrice";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,6 +84,11 @@ public class PortfolioActivity extends AppCompatActivity {
         }*/
 
         setPieChartData();
+        setPercentages();
+    }
+
+    private void setPercentages() {
+
     }
 
     private void setPieChartData() {

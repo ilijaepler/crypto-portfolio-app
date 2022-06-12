@@ -8,9 +8,11 @@ import androidx.core.app.ActivityOptionsCompat;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Message;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.widget.LinearLayout;
@@ -34,6 +36,11 @@ import java.util.LinkedList;
 import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
+
+    private final static String SHARED_PREFERENCES_PREFIX = "CryptoPrice";
+    public static LinkedList<String> symbolsSharedPreferences = new LinkedList<>();
+    public static LinkedList<String> pricesSharedPreferences = new LinkedList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -99,10 +106,10 @@ public class MainActivity extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {}
         });
 
-        initCryptoPairs();
+        initCryptoPairsAndSharedPreferences();
     }
 
-    private void initCryptoPairs() {
+    private void initCryptoPairsAndSharedPreferences() {
         // Read data from Binance API
         API.getJSON("https://api.binance.com/api/v3/ticker/price", new ReadDataHandler(){
 
@@ -132,9 +139,22 @@ public class MainActivity extends AppCompatActivity {
                                 labelValue.setText("$" + cp.getPrice());
 
                                 mainScrollView.addView(item);
+
+                                symbolsSharedPreferences.add(cp.getSymbol());
+                                pricesSharedPreferences.add(cp.getPrice());
+
                             }
                         }
                     }
+
+                    SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFERENCES_PREFIX, 0);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+
+                    for(int i = 0; i < symbolsSharedPreferences.size(); i++){
+                        editor.putString(symbolsSharedPreferences.get(0), pricesSharedPreferences.get(0));
+                    }
+
+                    editor.commit();
 
                 }catch (Exception e){
                     e.printStackTrace();
@@ -142,6 +162,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
 
     // Logging out the user
     private void logoutUser(){
