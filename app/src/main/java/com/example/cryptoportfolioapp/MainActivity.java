@@ -151,7 +151,9 @@ public class MainActivity extends AppCompatActivity {
                     SharedPreferences.Editor editor = sharedPreferences.edit();
 
                     for(int i = 0; i < symbolsSharedPreferences.size(); i++){
-                        editor.putString(symbolsSharedPreferences.get(0), pricesSharedPreferences.get(0));
+                        String symbolSharedPreferences = symbolsSharedPreferences.get(i);
+                        String priceSharedPreference = pricesSharedPreferences.get(i);
+                        editor.putString(symbolSharedPreferences, priceSharedPreference);
                     }
 
                     editor.commit();

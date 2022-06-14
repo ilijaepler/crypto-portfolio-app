@@ -321,7 +321,7 @@
                             android:textSize="18sp" />
 
                         <TextView
-                            android:id="@+id/tvBitcoinPercentage"
+                            android:id="@+id/tvBitcoinInDolars"
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
@@ -360,7 +360,7 @@
                             android:textSize="18sp" />
 
                         <TextView
-                            android:id="@+id/tvEthereumPercentage"
+                            android:id="@+id/tvEthereumInDolars"
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
@@ -399,7 +399,7 @@
                             android:textSize="18sp" />
 
                         <TextView
-                            android:id="@+id/tvCardanoPercentage"
+                            android:id="@+id/tvCardanoInDolars"
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
@@ -438,7 +438,7 @@
                             android:textSize="18sp" />
 
                         <TextView
-                            android:id="@+id/tvXRPPercentage"
+                            android:id="@+id/tvXRPInDolars"
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
@@ -477,7 +477,7 @@
                             android:textSize="18sp" />
 
                         <TextView
-                            android:id="@+id/tvSolanaPercentage"
+                            android:id="@+id/tvSolanaInDolars"
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
@@ -516,7 +516,7 @@
                             android:textSize="18sp" />
 
                         <TextView
-                            android:id="@+id/tvPolkadotPercentage"
+                            android:id="@+id/tvPolkadotInDolars"
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
@@ -556,7 +556,7 @@
                             android:textSize="18sp" />
 
                         <TextView
-                            android:id="@+id/tvAvaxPercentage"
+                            android:id="@+id/tvAvaxInDolars"
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
@@ -593,7 +593,7 @@
                             android:textSize="18sp" />
 
                         <TextView
-                            android:id="@+id/tvMaticPercentage"
+                            android:id="@+id/tvMaticInDolars"
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
@@ -631,7 +631,7 @@
                             android:textSize="18sp" />
 
                         <TextView
-                            android:id="@+id/tvLinkPercentage"
+                            android:id="@+id/tvLinkInDolars"
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
