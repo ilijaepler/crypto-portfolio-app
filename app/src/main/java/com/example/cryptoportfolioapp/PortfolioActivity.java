@@ -76,42 +76,57 @@ public class PortfolioActivity extends AppCompatActivity {
             }
         });
 
-        setPieChartData();
         setAssetsValue();
+        setPieChartData();
     }
 
     private void setAssetsValue() {
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFERENCES_PREFIX, 0);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
 
-        TextView tvBitcoinPercentage = findViewById(R.id.tvBitcoinInDolars);
-        tvBitcoinPercentage.setText("$" + String.valueOf(sharedPreferences.getFloat("BTCUSDTByAmount", 0)));
+        TextView tvBitcoinInDolars = findViewById(R.id.tvBitcoinInDolars);
+        tvBitcoinInDolars.setText("$" + String.valueOf(sharedPreferences.getFloat("BTCUSDTByAmount", 0)));
 
-        TextView tvEthereumPercentage = findViewById(R.id.tvEthereumInDolars);
-        tvEthereumPercentage.setText("$" + String.valueOf(sharedPreferences.getFloat("ETHUSDTByAmount", 0)));
+        TextView tvEthereumInDolars = findViewById(R.id.tvEthereumInDolars);
+        tvEthereumInDolars.setText("$" + String.valueOf(sharedPreferences.getFloat("ETHUSDTByAmount", 0)));
 
-        TextView tvCardanoPercentage = findViewById(R.id.tvCardanoInDolars);
-        tvCardanoPercentage.setText("$" + String.valueOf(sharedPreferences.getFloat("ADAUSDTByAmount", 0)));
+        TextView tvCardanoInDolars = findViewById(R.id.tvCardanoInDolars);
+        tvCardanoInDolars.setText("$" + String.valueOf(sharedPreferences.getFloat("ADAUSDTByAmount", 0)));
 
-        TextView tvXRPPercentage = findViewById(R.id.tvXRPInDolars);
-        tvXRPPercentage.setText("$" + String.valueOf(sharedPreferences.getFloat("XRPUSDTByAmount", 0)));
+        TextView tvXRPInDolars = findViewById(R.id.tvXRPInDolars);
+        tvXRPInDolars.setText("$" + String.valueOf(sharedPreferences.getFloat("XRPUSDTByAmount", 0)));
 
-        TextView tvSolanaPercentage = findViewById(R.id.tvSolanaInDolars);
-        tvSolanaPercentage.setText("$" + String.valueOf(sharedPreferences.getFloat("SOLUSDTByAmount", 0)));
+        TextView tvSolanaInDolars = findViewById(R.id.tvSolanaInDolars);
+        tvSolanaInDolars.setText("$" + String.valueOf(sharedPreferences.getFloat("SOLUSDTByAmount", 0)));
 
-        TextView tvPolkadotPercentage = findViewById(R.id.tvPolkadotInDolars);
-        tvPolkadotPercentage.setText("$" + String.valueOf(sharedPreferences.getFloat("DOTUSDTByAmount", 0)));
+        TextView tvPolkadotInDolars = findViewById(R.id.tvPolkadotInDolars);
+        tvPolkadotInDolars.setText("$" + String.valueOf(sharedPreferences.getFloat("DOTUSDTByAmount", 0)));
 
-        TextView tvAvaxPercentage = findViewById(R.id.tvAvaxInDolars);
-        tvAvaxPercentage.setText("$" + String.valueOf(sharedPreferences.getFloat("AVAXUSDTByAmount", 0)));
+        TextView tvAvaxInDolars = findViewById(R.id.tvAvaxInDolars);
+        tvAvaxInDolars.setText("$" + String.valueOf(sharedPreferences.getFloat("AVAXUSDTByAmount", 0)));
 
-        TextView tvMaticPercentage = findViewById(R.id.tvMaticInDolars);
-        tvMaticPercentage.setText("$" + String.valueOf(sharedPreferences.getFloat("MATICUSDTByAmount", 0)));
+        TextView tvMaticInDolars = findViewById(R.id.tvMaticInDolars);
+        tvMaticInDolars.setText("$" + String.valueOf(sharedPreferences.getFloat("MATICUSDTByAmount", 0)));
 
-        TextView tvLinkPercentage = findViewById(R.id.tvLinkInDolars);
-        tvLinkPercentage.setText("$" + String.valueOf(sharedPreferences.getFloat("LINKUSDTByAmount", 0)));
+        TextView tvLinkInDolars = findViewById(R.id.tvLinkInDolars);
+        tvLinkInDolars.setText("$" + String.valueOf(sharedPreferences.getFloat("LINKUSDTByAmount", 0)));
+
+        float sumOfAssets = sharedPreferences.getFloat("BTCUSDTByAmount", 0)
+                          + sharedPreferences.getFloat("ETHUSDTByAmount", 0)
+                          + sharedPreferences.getFloat("ADAUSDTByAmount", 0)
+                          + sharedPreferences.getFloat("XRPUSDTByAmount", 0)
+                          + sharedPreferences.getFloat("SOLUSDTByAmount", 0)
+                          + sharedPreferences.getFloat("DOTUSDTByAmount", 0)
+                          + sharedPreferences.getFloat("AVAXUSDTByAmount", 0)
+                          + sharedPreferences.getFloat("MATICUSDTByAmount", 0)
+                          + sharedPreferences.getFloat("LINKUSDTByAmount", 0);
+
+        editor.putFloat("sumOfAssets", sumOfAssets);
+        editor.commit();
     }
 
     private void setPieChartData() {
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFERENCES_PREFIX, 0);
         PieChart pieChart;
 
         pieChart = findViewById(R.id.piechart);
@@ -119,47 +134,47 @@ public class PortfolioActivity extends AppCompatActivity {
         pieChart.addPieSlice(
                 new PieModel(
                         "BTCUSDT",
-                        10,
+                        (sharedPreferences.getFloat("BTCUSDTByAmount", 0)/sharedPreferences.getFloat("sumOfAssets", 0))*100,
                         Color.parseColor("#FF3700B3")));
         pieChart.addPieSlice(
                 new PieModel(
                         "ETHUSDT",
-                        0,
+                        (sharedPreferences.getFloat("ETHUSDTByAmount", 0)/sharedPreferences.getFloat("sumOfAssets", 0))*100,
                         Color.parseColor("#FF6200EE")));
         pieChart.addPieSlice(
                 new PieModel(
                         "ADAUSDT",
-                        0,
+                        (sharedPreferences.getFloat("ADAUSDTByAmount", 0)/sharedPreferences.getFloat("sumOfAssets", 0))*100,
                         Color.parseColor("#FFBB86FC")));
         pieChart.addPieSlice(
                 new PieModel(
                         "XRPUSDT",
-                        0,
+                        (sharedPreferences.getFloat("XRPUSDTByAmount", 0)/sharedPreferences.getFloat("sumOfAssets", 0))*100,
                         Color.parseColor("#29B6F6")));
         pieChart.addPieSlice(
                 new PieModel(
                         "SOLUSDT",
-                        0,
+                        (sharedPreferences.getFloat("SOLUSDTByAmount", 0)/sharedPreferences.getFloat("sumOfAssets", 0))*100,
                         Color.parseColor("#FF03DAC5")));
         pieChart.addPieSlice(
                 new PieModel(
                         "DOTUSDT",
-                        0,
+                        (sharedPreferences.getFloat("DOTUSDTByAmount", 0)/sharedPreferences.getFloat("sumOfAssets", 0))*100,
                         Color.parseColor("#66BB6A")));
         pieChart.addPieSlice(
                 new PieModel(
                         "AVAXUSDT",
-                        0,
+                        (sharedPreferences.getFloat("AVAXUSDTByAmount", 0)/sharedPreferences.getFloat("sumOfAssets", 0))*100,
                         Color.parseColor("#FF018786")));
         pieChart.addPieSlice(
                 new PieModel(
                         "MATICUSDT",
-                        0,
+                        (sharedPreferences.getFloat("MATICUSDTByAmount", 0)/sharedPreferences.getFloat("sumOfAssets", 0))*100,
                         Color.parseColor("#29B6F6")));
         pieChart.addPieSlice(
                 new PieModel(
                         "LINKUSDT",
-                        0,
+                        (sharedPreferences.getFloat("LINKUSDTByAmount", 0)/sharedPreferences.getFloat("sumOfAssets", 0))*100,
                         Color.parseColor("#024265")));
 
         pieChart.startAnimation();

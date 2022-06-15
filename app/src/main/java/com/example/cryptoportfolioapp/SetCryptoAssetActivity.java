@@ -37,6 +37,7 @@ public class SetCryptoAssetActivity extends AppCompatActivity {
 
         EditText inputSetValue = findViewById(R.id.inputSetValue);
         Button buttonAddAsset = findViewById(R.id.buttonAddAsset);
+        Button buttonGoBack = findViewById(R.id.buttonAssetGoBack);
         buttonAddAsset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -62,6 +63,17 @@ public class SetCryptoAssetActivity extends AppCompatActivity {
                 startActivity(intent, bundle);
                 finish();
 
+            }
+        });
+
+        buttonGoBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SetCryptoAssetActivity.this, PortfolioActivity.class);
+                Bundle bundle = ActivityOptionsCompat.makeCustomAnimation(SetCryptoAssetActivity.this,
+                        android.R.anim.fade_in, android.R.anim.fade_out).toBundle();
+                startActivity(intent, bundle);
+                finish();
             }
         });
     }

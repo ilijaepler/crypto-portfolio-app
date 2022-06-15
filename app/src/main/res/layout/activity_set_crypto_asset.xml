@@ -42,7 +42,8 @@
         <Spinner
             android:id="@+id/spinnerChooseCrypto"
             android:layout_width="match_parent"
-            android:layout_height="50dp" />
+            android:layout_height="50dp"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <Space
             android:layout_width="match_parent"
@@ -76,6 +77,14 @@
             android:layout_marginTop="40dp"
             android:fontFamily="monospace"
             android:text="Add asset" />
+
+        <Button
+            android:id="@+id/buttonAssetGoBack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="monospace"
+            android:text="Go back" />
 
     </LinearLayout>
 
