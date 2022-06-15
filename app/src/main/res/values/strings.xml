@@ -9,4 +9,30 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="crypto_portfolio">CryptoPortfolio</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="enter_email">Enter email...</string>
+    <string name="password">Password</string>
+    <string name="enter_password">Enter password...</string>
+    <string name="register">Register</string>
+
+    <string name="register_form">Register form</string>
+    <string name="first_name">First name</string>
+    <string name="enter_first_name">Enter first name...</string>
+    <string name="last_name">Last name</string>
+    <string name="enter_last_name">Enter last name...</string>
+
+    <string name="hello">Hello</string>
+    <string name="portfolio">Portfolio</string>
+    <string name="bitcoin">Bitcoin</string>
+    <string name="ethereum">Ethereum</string>
+    <string name="cardano">Cardano</string>
+    <string name="XRP">XRP</string>
+    <string name="solana">Solana</string>
+    <string name="polkadot">Polkadot</string>
+    <string name="AVAX">AVAX</string>
+    <string name="polygon">Polygon</string>
+    <string name="chainlink">Chainlink</string>
+    <string name="set_crypto_asset">Set crypto asset</string>
 </resources>

@@ -24,7 +24,7 @@
             android:fontFamily="monospace"
             android:gravity="center"
             android:paddingBottom="50dp"
-            android:text="CryptoPortfolio"
+            android:text="@string/crypto_portfolio"
             android:textColor="#EFEFEF"
             android:textSize="20sp" />
 
@@ -35,7 +35,7 @@
             android:layout_marginTop="20dp"
             android:fontFamily="monospace"
             android:foregroundGravity="left"
-            android:text="Login"
+            android:text="@string/login"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
             android:textSize="60sp" />
@@ -49,7 +49,7 @@
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:fontFamily="monospace"
-            android:text="Email"
+            android:text="@string/email"
             android:textColor="#FFFFFF"
             android:textSize="22sp" />
 
@@ -59,14 +59,15 @@
             android:layout_height="50dp"
             android:ems="10"
             android:fontFamily="monospace"
-            android:hint="Enter email..."
-            android:inputType="textPersonName"
+            android:hint="@string/enter_email"
+            android:inputType="textEmailAddress"
             android:shadowColor="#FFFFFF"
             android:textColor="#FFFFFF"
             android:textColorHighlight="#9C27B0"
             android:textColorHint="#BFB8B8"
             android:textColorLink="#9C27B0"
-            android:textSize="22sp" />
+            android:textSize="22sp"
+            android:importantForAutofill="no" />
 
         <TextView
             android:id="@+id/labelLoginPassword"
@@ -74,7 +75,7 @@
             android:layout_height="30dp"
             android:layout_marginTop="20dp"
             android:fontFamily="monospace"
-            android:text="Password"
+            android:text="@string/password"
             android:textColor="#FFFFFF"
             android:textSize="22sp" />
 
@@ -84,27 +85,29 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:fontFamily="monospace"
-            android:hint="Enter password..."
+            android:hint="@string/enter_password"
             android:inputType="textPassword"
             android:textColor="#FFFFFF"
             android:textColorHint="#BFB8B8"
-            android:textSize="22sp" />
+            android:textSize="22sp"
+            android:importantForAutofill="no" />
 
         <Button
             android:id="@+id/buttonLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="monospace"
-            android:text="Login" />
+            android:text="@string/login"
+            tools:ignore="DuplicateSpeakableTextCheck" />
 
         <TextView
             android:id="@+id/labelSwitchToRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="monospace"
-            android:text="Register"
+            android:text="@string/register"
             android:textAlignment="textEnd"
-            android:textColor="#6578E4"
+            android:textColor="#448AFF"
             android:textSize="24sp" />
 
     </LinearLayout>

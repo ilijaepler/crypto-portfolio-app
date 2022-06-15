@@ -10,11 +10,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Message;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -132,8 +134,19 @@ public class MainActivity extends AppCompatActivity {
 
                         for(int i = 0; i < symbols.length; i++){
                             if(symbols[i].equals(cp.getSymbol())){
-                                TextView labelName = item.findViewById(R.id.labelViewSymbol);
-                                labelName.setText(cp.getSymbol());
+                                TextView labelSymbol = item.findViewById(R.id.labelViewSymbol);
+                                labelSymbol.setText(cp.getSymbol());
+
+                                labelSymbol.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        String url = "https://www.tradingview.com/symbols/" + cp.getSymbol() + "/";
+
+                                        Intent intent = new Intent(Intent.ACTION_VIEW);
+                                        intent.setData(Uri.parse(url));
+                                        startActivity(intent);
+                                    }
+                                });
 
                                 TextView labelValue = item.findViewById(R.id.labelViewPrice);
                                 labelValue.setText("$" + cp.getPrice());

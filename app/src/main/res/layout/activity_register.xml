@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:fontFamily="monospace"
-            android:text="Register form"
+            android:text="@string/register_form"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
             android:textSize="40sp" />
@@ -33,7 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:fontFamily="monospace"
-            android:text="First Name"
+            android:text="@string/first_name"
             android:textColor="#FFFFFF"
             android:textSize="22sp" />
 
@@ -43,13 +43,14 @@
             android:layout_height="50dp"
             android:ems="10"
             android:fontFamily="monospace"
-            android:hint="Enter first name..."
+            android:hint="@string/enter_first_name"
             android:inputType="textPersonName"
             android:textColor="#FFFFFF"
             android:textColorHighlight="#3F51B5"
             android:textColorHint="#BFB8B8"
             android:textColorLink="#3F51B5"
-            android:textSize="22sp" />
+            android:textSize="22sp"
+            android:importantForAutofill="no" />
 
         <TextView
             android:id="@+id/labelRegisterLastName"
@@ -57,7 +58,7 @@
             android:layout_height="30dp"
             android:layout_marginTop="15dp"
             android:fontFamily="monospace"
-            android:text="Last Name"
+            android:text="@string/last_name"
             android:textColor="#FFFFFF"
             android:textSize="22sp" />
 
@@ -67,13 +68,14 @@
             android:layout_height="50dp"
             android:ems="10"
             android:fontFamily="monospace"
-            android:hint="Enter last name..."
+            android:hint="@string/enter_last_name"
             android:inputType="textPersonName"
             android:textColor="#FFFFFF"
             android:textColorHighlight="#3F51B5"
             android:textColorHint="#BFB8B8"
             android:textColorLink="#3F51B5"
-            android:textSize="22sp" />
+            android:textSize="22sp"
+            android:importantForAutofill="no" />
 
         <TextView
             android:id="@+id/labelRegisterEmail"
@@ -81,7 +83,7 @@
             android:layout_height="30dp"
             android:layout_marginTop="15dp"
             android:fontFamily="monospace"
-            android:text="Email"
+            android:text="@string/email"
             android:textColor="#FFFFFF"
             android:textSize="22sp" />
 
@@ -91,13 +93,14 @@
             android:layout_height="50dp"
             android:ems="10"
             android:fontFamily="monospace"
-            android:hint="Enter email..."
+            android:hint="@string/enter_email"
             android:inputType="textEmailAddress"
             android:textColor="#FFFFFF"
             android:textColorHighlight="#3F51B5"
             android:textColorHint="#BFB8B8"
             android:textColorLink="#3F51B5"
-            android:textSize="22sp" />
+            android:textSize="22sp"
+            android:importantForAutofill="no" />
 
         <TextView
             android:id="@+id/labelRegisterPassword"
@@ -105,7 +108,7 @@
             android:layout_height="30dp"
             android:layout_marginTop="15dp"
             android:fontFamily="monospace"
-            android:text="Password"
+            android:text="@string/password"
             android:textColor="#FFFFFF"
             android:textSize="22sp" />
 
@@ -115,29 +118,30 @@
             android:layout_height="50dp"
             android:ems="10"
             android:fontFamily="monospace"
-            android:hint="Enter password..."
+            android:hint="@string/enter_password"
             android:inputType="textPassword"
             android:textColor="#FFFFFF"
             android:textColorHighlight="#3F51B5"
             android:textColorHint="#BFB8B8"
             android:textColorLink="#3F51B5"
-            android:textSize="22sp" />
+            android:textSize="22sp"
+            android:importantForAutofill="no" />
 
         <Button
             android:id="@+id/buttonRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="monospace"
-            android:text="Register" />
+            android:text="@string/register" />
 
         <TextView
             android:id="@+id/labelSwitchToLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="monospace"
-            android:text="Login"
+            android:text="@string/login"
             android:textAlignment="textEnd"
-            android:textColor="#6578E4"
+            android:textColor="#448AFF"
             android:textSize="24sp" />
 
     </LinearLayout>

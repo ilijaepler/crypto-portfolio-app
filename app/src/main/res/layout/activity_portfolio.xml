@@ -14,7 +14,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="30dp"
         android:fontFamily="monospace"
-        android:text="Portfolio"
+        android:text="@string/portfolio"
         android:textColor="#FFFFFF"
         android:textSize="34sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -60,9 +60,9 @@
                     android:layout_marginTop="15dp"
                     android:layout_marginBottom="15dp"
                     android:layout_weight="1"
-                    android:padding="6dp"
+                    android:background="#302F2F"
 
-                    />
+                    android:padding="6dp" />
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -90,7 +90,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingLeft="10dp"
-                            android:text="Bitcoin"
+                            android:paddingRight="10dp"
+                            android:text="@string/bitcoin"
                             android:textColor="#FFFFFF" />
 
                     </LinearLayout>
@@ -111,7 +112,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingLeft="10dp"
-                            android:text="Ethereum"
+                            android:paddingRight="10dp"
+                            android:text="@string/ethereum"
                             android:textColor="#FFFFFF" />
 
                     </LinearLayout>
@@ -133,7 +135,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingLeft="10dp"
-                            android:text="Cardano"
+                            android:paddingRight="10dp"
+                            android:text="@string/cardano"
                             android:textColor="#FFFFFF" />
 
                     </LinearLayout>
@@ -155,7 +158,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingLeft="10dp"
-                            android:text="XRP"
+                            android:paddingRight="10dp"
+                            android:text="@string/XRP"
                             android:textColor="#FFFFFF" />
 
                     </LinearLayout>
@@ -178,7 +182,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingLeft="10dp"
-                            android:text="Solana"
+                            android:paddingRight="10dp"
+                            android:text="@string/solana"
                             android:textColor="#FFFFFF" />
 
                     </LinearLayout>
@@ -199,7 +204,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingLeft="10dp"
-                            android:text="Polkadot"
+                            android:paddingRight="10dp"
+                            android:text="@string/polkadot"
                             android:textColor="#FFFFFF" />
 
                     </LinearLayout>
@@ -207,7 +213,7 @@
                     <!--Linear layout to display Python-->
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="21dp"
+                        android:layout_height="20dp"
                         android:layout_gravity="center_vertical"
                         android:layout_marginTop="5dp">
 
@@ -222,7 +228,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingLeft="10dp"
-                            android:text="AVAX"
+                            android:paddingRight="10dp"
+                            android:text="@string/AVAX"
                             android:textColor="#FFFFFF" />
 
                     </LinearLayout>
@@ -245,7 +252,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingLeft="10dp"
-                            android:text="Polygon"
+                            android:paddingRight="10dp"
+                            android:text="@string/polygon"
                             android:textColor="#FFFFFF" />
 
                     </LinearLayout>
@@ -268,7 +276,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingLeft="10dp"
-                            android:text="Chainlink"
+                            android:paddingRight="10dp"
+                            android:text="@string/chainlink"
                             android:textColor="#FFFFFF" />
 
                     </LinearLayout>
@@ -316,7 +325,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="monospace"
-                            android:text="Bitcoin"
+                            android:text="@string/bitcoin"
                             android:textColor="#FFFFFF"
                             android:textSize="18sp" />
 
@@ -355,7 +364,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="monospace"
-                            android:text="Etherium"
+                            android:text="@string/ethereum"
                             android:textColor="#FFFFFF"
                             android:textSize="18sp" />
 
@@ -394,7 +403,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="monospace"
-                            android:text="Cardano"
+                            android:text="@string/cardano"
                             android:textColor="@color/white"
                             android:textSize="18sp" />
 
@@ -433,7 +442,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="monospace"
-                            android:text="XRP"
+                            android:text="@string/XRP"
                             android:textColor="@color/white"
                             android:textSize="18sp" />
 
@@ -472,8 +481,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="monospace"
+                            android:text="@string/solana"
                             android:textColor="@color/white"
-                            android:text="Solana"
                             android:textSize="18sp" />
 
                         <TextView
@@ -511,8 +520,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="monospace"
+                            android:text="@string/polkadot"
                             android:textColor="@color/white"
-                            android:text="Polkadot"
                             android:textSize="18sp" />
 
                         <TextView
@@ -551,8 +560,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="monospace"
+                            android:text="@string/AVAX"
                             android:textColor="@color/white"
-                            android:text="AVAX"
                             android:textSize="18sp" />
 
                         <TextView
@@ -588,8 +597,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="monospace"
+                            android:text="@string/polygon"
                             android:textColor="@color/white"
-                            android:text="Polygon"
                             android:textSize="18sp" />
 
                         <TextView
@@ -626,8 +635,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="monospace"
+                            android:text="@string/chainlink"
                             android:textColor="@color/white"
-                            android:text="Chainlink"
                             android:textSize="18sp" />
 
                         <TextView
@@ -663,7 +672,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:fontFamily="monospace"
-        android:text="Set crypto asset"
+        android:text="@string/set_crypto_asset"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mainScrollView" />
