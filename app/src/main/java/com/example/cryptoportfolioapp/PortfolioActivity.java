@@ -80,36 +80,37 @@ public class PortfolioActivity extends AppCompatActivity {
         setPieChartData();
     }
 
+    // Setting up assets value list
     private void setAssetsValue() {
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFERENCES_PREFIX, 0);
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
-        TextView tvBitcoinInDolars = findViewById(R.id.tvBitcoinInDolars);
-        tvBitcoinInDolars.setText("$" + String.valueOf(sharedPreferences.getFloat("BTCUSDTByAmount", 0)));
+        TextView tvBitcoinInDollars = findViewById(R.id.tvBitcoinInDolars);
+        tvBitcoinInDollars.setText("$" + String.valueOf(sharedPreferences.getFloat("BTCUSDTByAmount", 0)));
 
-        TextView tvEthereumInDolars = findViewById(R.id.tvEthereumInDolars);
-        tvEthereumInDolars.setText("$" + String.valueOf(sharedPreferences.getFloat("ETHUSDTByAmount", 0)));
+        TextView tvEthereumInDollars = findViewById(R.id.tvEthereumInDolars);
+        tvEthereumInDollars.setText("$" + String.valueOf(sharedPreferences.getFloat("ETHUSDTByAmount", 0)));
 
-        TextView tvCardanoInDolars = findViewById(R.id.tvCardanoInDolars);
-        tvCardanoInDolars.setText("$" + String.valueOf(sharedPreferences.getFloat("ADAUSDTByAmount", 0)));
+        TextView tvCardanoInDollars = findViewById(R.id.tvCardanoInDolars);
+        tvCardanoInDollars.setText("$" + String.valueOf(sharedPreferences.getFloat("ADAUSDTByAmount", 0)));
 
-        TextView tvXRPInDolars = findViewById(R.id.tvXRPInDolars);
-        tvXRPInDolars.setText("$" + String.valueOf(sharedPreferences.getFloat("XRPUSDTByAmount", 0)));
+        TextView tvXRPInDollars = findViewById(R.id.tvXRPInDolars);
+        tvXRPInDollars.setText("$" + String.valueOf(sharedPreferences.getFloat("XRPUSDTByAmount", 0)));
 
-        TextView tvSolanaInDolars = findViewById(R.id.tvSolanaInDolars);
-        tvSolanaInDolars.setText("$" + String.valueOf(sharedPreferences.getFloat("SOLUSDTByAmount", 0)));
+        TextView tvSolanaInDollars = findViewById(R.id.tvSolanaInDolars);
+        tvSolanaInDollars.setText("$" + String.valueOf(sharedPreferences.getFloat("SOLUSDTByAmount", 0)));
 
-        TextView tvPolkadotInDolars = findViewById(R.id.tvPolkadotInDolars);
-        tvPolkadotInDolars.setText("$" + String.valueOf(sharedPreferences.getFloat("DOTUSDTByAmount", 0)));
+        TextView tvPolkadotInDollars = findViewById(R.id.tvPolkadotInDolars);
+        tvPolkadotInDollars.setText("$" + String.valueOf(sharedPreferences.getFloat("DOTUSDTByAmount", 0)));
 
-        TextView tvAvaxInDolars = findViewById(R.id.tvAvaxInDolars);
-        tvAvaxInDolars.setText("$" + String.valueOf(sharedPreferences.getFloat("AVAXUSDTByAmount", 0)));
+        TextView tvAvaxInDollars = findViewById(R.id.tvAvaxInDolars);
+        tvAvaxInDollars.setText("$" + String.valueOf(sharedPreferences.getFloat("AVAXUSDTByAmount", 0)));
 
-        TextView tvMaticInDolars = findViewById(R.id.tvMaticInDolars);
-        tvMaticInDolars.setText("$" + String.valueOf(sharedPreferences.getFloat("MATICUSDTByAmount", 0)));
+        TextView tvMaticInDollars = findViewById(R.id.tvMaticInDolars);
+        tvMaticInDollars.setText("$" + String.valueOf(sharedPreferences.getFloat("MATICUSDTByAmount", 0)));
 
-        TextView tvLinkInDolars = findViewById(R.id.tvLinkInDolars);
-        tvLinkInDolars.setText("$" + String.valueOf(sharedPreferences.getFloat("LINKUSDTByAmount", 0)));
+        TextView tvLinkInDollars = findViewById(R.id.tvLinkInDolars);
+        tvLinkInDollars.setText("$" + String.valueOf(sharedPreferences.getFloat("LINKUSDTByAmount", 0)));
 
         float sumOfAssets = sharedPreferences.getFloat("BTCUSDTByAmount", 0)
                           + sharedPreferences.getFloat("ETHUSDTByAmount", 0)
@@ -125,6 +126,7 @@ public class PortfolioActivity extends AppCompatActivity {
         editor.commit();
     }
 
+    // Setting up pie chart
     private void setPieChartData() {
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFERENCES_PREFIX, 0);
         PieChart pieChart;

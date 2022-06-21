@@ -26,12 +26,14 @@ public class SetCryptoAssetActivity extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).hide();
         setContentView(R.layout.activity_set_crypto_asset);
 
+        // crypto pairs which are available in the spinner
         String[] symbols = {"BTCUSDT", "ETHUSDT", "ADAUSDT",
                 "XRPUSDT", "SOLUSDT", "DOTUSDT",
                 "AVAXUSDT", "MATICUSDT", "LINKUSDT"};
 
         Spinner spinnerChooseAsset = findViewById(R.id.spinnerChooseCrypto);
 
+        // array adapter for the spinner
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.spinner_item, symbols);
         spinnerChooseAsset.setAdapter(adapter);
 
@@ -53,10 +55,12 @@ public class SetCryptoAssetActivity extends AppCompatActivity {
 
                 String symbolValueMultipliedByAmount = selectedItem + "ByAmount";
                 float valueMultipliedWithAmount = Float.parseFloat(sharedPreferences.getString(selectedItem, "")) * Float.parseFloat(value);
-                editor.putFloat(symbolValueMultipliedByAmount, valueMultipliedWithAmount);
 
+                // Storing crypto amount in the shared preferences
+                editor.putFloat(symbolValueMultipliedByAmount, valueMultipliedWithAmount);
                 editor.commit();
 
+                // Going back to the portfolio activity
                 Intent intent = new Intent(SetCryptoAssetActivity.this, PortfolioActivity.class);
                 Bundle bundle = ActivityOptionsCompat.makeCustomAnimation(SetCryptoAssetActivity.this,
                         android.R.anim.fade_in, android.R.anim.fade_out).toBundle();
@@ -66,6 +70,7 @@ public class SetCryptoAssetActivity extends AppCompatActivity {
             }
         });
 
+        // Going back to the portfolio activity
         buttonGoBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -137,6 +137,7 @@ public class MainActivity extends AppCompatActivity {
                                 TextView labelSymbol = item.findViewById(R.id.labelViewSymbol);
                                 labelSymbol.setText(cp.getSymbol());
 
+                                // Opening chart in the web browser
                                 labelSymbol.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View view) {
